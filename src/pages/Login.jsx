@@ -30,7 +30,7 @@ const Login = () => {
           <>
             <h1>¡ Bienvenido ! ya te encuentras logeado</h1>
             <button onClick={handleLogout} >
-              Logout
+              Cerrar Sesión
             </button>
           </>
         ):(
@@ -44,9 +44,9 @@ const Login = () => {
               <input type="password" name="password" placeholder="*********" />
               
               <button onClick={handleLogin}>
-                Log In
+                Iniciar Sesión
               </button>  
-              <a href="/">Forgot my password</a>
+              <a href="/">Olvidé mi Contraseña</a>
             </form>
           </>
         )}
