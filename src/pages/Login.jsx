@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
+import Button from 'react-bootstrap/Button';
+
 
 const Login = () => {
   const form = useRef(null);
@@ -29,9 +31,9 @@ const Login = () => {
         {(authenticated) ? (
           <>
             <h1>¡ Bienvenido ! ya te encuentras logeado</h1>
-            <button onClick={handleLogout} >
+            <Button onClick={handleLogout} >
               Cerrar Sesión
-            </button>
+            </Button>
           </>
         ):(
           <>
@@ -43,10 +45,10 @@ const Login = () => {
               <label htmlFor = "password"> Contraseña: </label>
               <input type="password" name="password" placeholder="*********" />
               
-              <button onClick={handleLogin}>
-                Iniciar Sesión
-              </button>  
-              <a href="/">Olvidé mi Contraseña</a>
+              <Button onClick={handleLogin}>
+                Log In
+              </Button>  
+              <a href="/">Forgot my password</a>
             </form>
           </>
         )}
