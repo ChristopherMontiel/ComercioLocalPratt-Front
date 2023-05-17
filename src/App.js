@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout';
+import Layout from './containers/Layout';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import NotFoundPage from './pages/NotFoundPage'
@@ -10,8 +10,6 @@ import AuthProvider from './context/AuthContext';
 
 function App() {
   return (
-  <div>
-    <h1> Routes </h1>
     <AuthProvider>
       <Routes>
         <Route path='/' element={<Layout/>}>
@@ -22,7 +20,6 @@ function App() {
         </Route>
       </Routes>
     </AuthProvider>
-  </div>
   );
 }
 
