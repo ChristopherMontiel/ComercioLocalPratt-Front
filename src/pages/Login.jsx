@@ -28,11 +28,11 @@ const Login = () => {
   }
 
   return (
-    <div>
+    <div className="text-center mt-5">
       <main>
-        <Card>
+        <Card style={{ display: 'inline-block' }}>
           <Card.Header as="h5">Inicio de Sesión</Card.Header>
-          <Card.Body>
+          <Card.Body className="d-flex flex-column">
             {(authenticated) ? (
             <>
               <Card.Title>¡ Bienvenido ! ya te encuentras logeado </Card.Title>
