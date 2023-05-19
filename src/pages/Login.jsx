@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+
 
 
 const Login = () => {
@@ -28,30 +30,40 @@ const Login = () => {
   return (
     <div>
       <main>
-        {(authenticated) ? (
-          <>
-            <h1>¡ Bienvenido ! ya te encuentras logeado</h1>
-            <Button onClick={handleLogout} >
-              Cerrar Sesión
-            </Button>
-          </>
-        ):(
-          <>
-            <h1>Iniciar Sesión</h1>
-            <form action="/" ref= { form }>
-              <label htmlFor = "username"> Nombre de usuario: </label>
-              <input type="text" name="username" placeholder="username" />
-              
-              <label htmlFor = "password"> Contraseña: </label>
-              <input type="password" name="password" placeholder="*********" />
-              
-              <Button onClick={handleLogin}>
-                Log In
-              </Button>  
-              <a href="/">Forgot my password</a>
-            </form>
-          </>
-        )}
+        <Card>
+          <Card.Header as="h5">Inicio de Sesión</Card.Header>
+          <Card.Body>
+            {(authenticated) ? (
+            <>
+              <Card.Title>¡ Bienvenido ! ya te encuentras logeado </Card.Title>
+              <Card.Text>
+                <Button onClick={handleLogout} >
+                  Cerrar Sesión
+                </Button>
+              </Card.Text>
+            </> 
+            ):(
+            <>
+              <Card.Title> Ingresa tus datos </Card.Title>
+              <Card.Text>
+                <form action="/" ref= { form }>
+                  <label htmlFor = "username"> Nombre de usuario: </label>
+                  <input type="text" name="username" placeholder="username" />
+                  <br />
+                  <label htmlFor = "password"> Contraseña: </label>
+                  <input type="password" name="password" placeholder="*********" />
+                  <br />
+                  <Button onClick={handleLogin}>
+                    Iniciar Sesión
+                  </Button>
+                  <br />
+                  <a href="/">Olvidé mi contraseña</a>
+                </form>
+              </Card.Text>
+            </>
+            )}
+          </Card.Body>
+        </Card>
       </main>
     </div>
   );
